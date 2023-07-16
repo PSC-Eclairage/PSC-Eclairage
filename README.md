@@ -1,16 +1,29 @@
-### Hi there 👋
+<!DOCTYPE html> 
+<html lang="fr">
 
-<!--
-**PSC-Eclairage/psc-eclairage** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<head >
+    <title>Temps d'attente</title>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <link rel="icon" href="favicon.ico" />
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/realm-web@1.2.0/dist/bundle.iife.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Rubik&display=swap" rel="stylesheet">
+    <style>
+		h1 {  font-family: 'Paytone One', sans-serif;}
+    body {  font-family: 'Rubik', sans-serif;}
+    h2 {  font-family: 'Paytone One', sans-serif;}
+	</style>
+</head>
 
-Here are some ideas to get you started:
+<body class="w3-animate-opacity">
+  <div id="data">
+  </div>
+</body>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+</html>
