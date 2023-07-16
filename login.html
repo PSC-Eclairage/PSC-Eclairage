@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="fr">
+
+<head>
+    <title>Connexion</title>
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <link rel="icon" href="favicon.ico" />
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/realm-web@1.2.0/dist/bundle.iife.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Rubik&display=swap" rel="stylesheet">
+    <style>
+		h1 {  font-family: 'Paytone One', sans-serif;}
+    body {  font-family: 'Rubik', sans-serif;}
+    h2 {  font-family: 'Paytone One', sans-serif;}
+	</style>
+</head>
+
+<body class="w3-animate-opacity">
+
+    <div id="login" class="w3-card w3-container w3-margin">
+        <h2 class="w3-center">Connexion</h2>
+        <label>Nom d'utilisateur</label>
+        <input id="username" class="w3-input w3-border" type="email">
+        <br>
+        <label>Mot de passe</label>
+        <input id="password" class="w3-input w3-border" type="password">
+        <button id="connexion" style="width: 100%;color:rgb(255,255,255);background-color:rgb(145,170,11);" class="w3-button w3-border w3-xlarge w3-ripple w3-section" onclick="connexion()">Se connecter</button>
+    </div>
+
+</body>
+
+</html>
