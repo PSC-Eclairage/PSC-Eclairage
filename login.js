@@ -11,7 +11,7 @@ function connexion()
   loginEmailPassword(username,password).then(user => {
     if(user != null)
     {
-    document.location.href="/psc-eclairage/index.html";
+    document.location.href="/index.html";
     }
     else 
     {
