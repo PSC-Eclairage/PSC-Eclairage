@@ -82,7 +82,7 @@ async function getData()
         data_html.insertAdjacentHTML("afterbegin",ajouthtml);
     }).catch(error =>{
         console.log(error);
-        document.location.href="/login.html";
+        document.location.href="/psc-eclairage/login.html";
     })
 }
 
