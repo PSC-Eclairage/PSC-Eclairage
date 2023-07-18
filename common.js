@@ -1,6 +1,6 @@
 var connect = false;
 
-const id = "waitingtimepsc-wqonh";
+const id = "eclairagepsc-qgkyx";
 const config = {
     id,
 };
