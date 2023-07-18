@@ -16,7 +16,7 @@ async function getData()
     var data_html = document.getElementById("data");
 
     const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-    const Attractions = mongodb.db("WaitingTime_PSC").collection("Attractions");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
 
     await Attractions.find({},{sort:{Name:1}}).then(data =>{
         Data = data;
@@ -30,9 +30,9 @@ async function getData()
         ajouthtml +=    "<table class=\"w3-table w3-bordered\">"
         ajouthtml +=        "<tr>";
         ajouthtml +=            "<th class=\"w3-center\"></th>";
-        ajouthtml +=            "<th>Attraction</th>";
-        ajouthtml +=            "<th class=\"w3-center\">Débit [pph]</th>";
-        ajouthtml +=            "<th class=\"w3-center\">Correction [%]</th>";
+        ajouthtml +=            "<th>Zone</th>";
+        ajouthtml +=            "<th class=\"w3-center\">Activation</th>";
+        ajouthtml +=            "<th class=\"w3-center\">Désactivation</th>";
         ajouthtml +=        "</tr>";
 
         var i=0;
@@ -52,8 +52,8 @@ async function getData()
             ajouthtml +=        "</div>";
             ajouthtml +=    "</td>";
             ajouthtml +=    "<td><input id=\""+ doc.Name+ "_1" +"\" class=\"w3-input w3-border-0 w3-left w3-hover-light-grey\" type=\"text\" value=\""+ doc.Name +"\"></td>";
-            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_2" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" min=\"1\"  value=\""+ doc.Flow +"\"></td>";
-            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_3" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" min=\"0\"  value=\""+ doc.Correction +"\"></td>";
+            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_2" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" min=\"1\"  value=\""+ doc.Activation +"\"></td>";
+            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_3" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" min=\"0\"  value=\""+ doc.Desactivation +"\"></td>";
             ajouthtml += "</tr>";
             i++;
         });
@@ -64,14 +64,14 @@ async function getData()
 
         ajouthtml += "<div id=\"new\" class=\"w3-card w3-margin\">";
         ajouthtml += "<div class=\"w3-container w3-center\">";
-        ajouthtml +=    "<h2>Nouvelle attraction</h2>";
+        ajouthtml +=    "<h2>Nouvelle zone</h2>";
         ajouthtml += "</div>";
         ajouthtml += "<div class=\"w3-container w3-center\">";
         ajouthtml +=    "<table class=\"w3-table\">";
         ajouthtml += "<tr id=\"new_Name\">";
-        ajouthtml +=    "<td><input id=\"new_Name_1" +"\" class=\"w3-input w3-border-0 w3-left w3-hover-light-grey\" type=\"text\" placeholder=\"Attraction\"></td>";
-        ajouthtml +=    "<td class=\"w3-center\"><input id=\"new_Name_2" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" placeholder=\"Débit [pph]\" min=\"0\"></td>";
-        ajouthtml +=    "<td class=\"w3-center\"><input id=\"new_Name_3" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" placeholder=\"Correction [%]\" min=\"0\"></td>";
+        ajouthtml +=    "<td><input id=\"new_Name_1" +"\" class=\"w3-input w3-border-0 w3-left w3-hover-light-grey\" type=\"text\" placeholder=\"Zone\"></td>";
+        ajouthtml +=    "<td class=\"w3-center\"><input id=\"new_Name_2" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" placeholder=\"Activation\" min=\"0\"></td>";
+        ajouthtml +=    "<td class=\"w3-center\"><input id=\"new_Name_3" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" placeholder=\"Désactivation\" min=\"0\"></td>";
         ajouthtml +=    "<td class=\"w3-center\"><img src=\"add.png\" height=\"40px\" onclick=\"ajout()\" onmouseover=\"this.style.cursor=\'pointer\'\"/></td>";
         ajouthtml += "</tr>";
         ajouthtml += "</table>";
@@ -97,7 +97,7 @@ async function getData()
 async function save(clicked_i)
 {
     const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-    const Attractions = mongodb.db("WaitingTime_PSC").collection("Attractions");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
 
     var doc = Data[clicked_i];
 
@@ -106,8 +106,8 @@ async function save(clicked_i)
     filter._id = Data[clicked_i]._id;
 
     data.Name = document.getElementById(Data[clicked_i].Name+"_1").value;
-    data.Flow = parseFloat(document.getElementById(Data[clicked_i].Name+"_2").value);
-    data.Correction = parseFloat(document.getElementById(Data[clicked_i].Name+"_3").value);
+    data.Activation = parseFloat(document.getElementById(Data[clicked_i].Name+"_2").value);
+    data.Desactivation = parseFloat(document.getElementById(Data[clicked_i].Name+"_3").value);
 
     var configur = document.getElementById("config");
     var ajouthtml;
@@ -136,12 +136,12 @@ async function save(clicked_i)
 async function ajout()
 {
     const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-    const Attractions = mongodb.db("WaitingTime_PSC").collection("Attractions");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
 
     const data ={
         "Name": document.getElementById("new_Name_1").value,
-        "Flow": parseFloat(document.getElementById("new_Name_2").value),
-        "Correction": parseFloat(document.getElementById("new_Name_3").value)
+        "Activation": parseFloat(document.getElementById("new_Name_2").value),
+        "Desactivation": parseFloat(document.getElementById("new_Name_3").value)
     };
 
     var configur = document.getElementById("data");
@@ -172,7 +172,7 @@ async function ajout()
 async function deleteAttraction(clicked_i)
 {
     const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-    const Attractions = mongodb.db("WaitingTime_PSC").collection("Attractions");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
 
     var doc = Data[clicked_i];
 
