@@ -140,8 +140,8 @@ async function ajout()
 
     const data ={
         "Name": document.getElementById("new_Name_1").value,
-        "Activation": parseFloat(document.getElementById("new_Name_2").value),
-        "Desactivation": parseFloat(document.getElementById("new_Name_3").value)
+        "Activation": document.getElementById("new_Name_2").value,
+        "Desactivation": document.getElementById("new_Name_3").value
     };
 
     var configur = document.getElementById("data");
