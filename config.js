@@ -52,8 +52,8 @@ async function getData()
             ajouthtml +=        "</div>";
             ajouthtml +=    "</td>";
             ajouthtml +=    "<td><input id=\""+ doc.Name+ "_1" +"\" class=\"w3-input w3-border-0 w3-left w3-hover-light-grey\" type=\"text\" value=\""+ doc.Name +"\"></td>";
-            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_2" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" min=\"1\"  value=\""+ doc.Activation +"\"></td>";
-            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_3" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"number\" min=\"0\"  value=\""+ doc.Desactivation +"\"></td>";
+            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_2" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"time\" min=\"1\"  value=\""+ doc.Activation +"\"></td>";
+            ajouthtml +=    "<td class=\"w3-center\"><input id=\""+ doc.Name+ "_3" +"\" class=\"w3-input w3-border-0 w3-center w3-hover-light-grey\" type=\"time\" min=\"0\"  value=\""+ doc.Desactivation +"\"></td>";
             ajouthtml += "</tr>";
             i++;
         });
