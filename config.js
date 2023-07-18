@@ -112,7 +112,7 @@ async function save(clicked_i)
     var configur = document.getElementById("config");
     var ajouthtml;
 
-    if(data.Name === "" || isNaN(data.Activation) || isNaN(data.Desactivation))
+    if(data.Name === "" || data.Activation === "" || data.Desactivation === "")
     {
         ajouthtml = "<div id=\"info\" class=\"w3-panel w3-red w3-margin w3-display-container\"><span onclick=\"removeinfo()\" class=\"w3-button w3-large w3-display-topright\">&times;</span><h3>Erreur </h3><p>Une des valeurs est incorrecte.</p></div>";
     }
@@ -147,7 +147,7 @@ async function ajout()
     var configur = document.getElementById("data");
     var ajouthtml;
 
-    if(data.Name === "" || isNaN(data.Activation) || isNaN(data.Desactivation))
+    if(data.Name === "" || data.Activation === "" || data.Desactivation === "")
     {
         ajouthtml = "<div id=\"info\" class=\"w3-panel w3-red w3-margin w3-display-container\"><span onclick=\"removeinfo()\" class=\"w3-button w3-large w3-display-topright\">&times;</span><h3>Erreur </h3><p>Une des valeurs est incorrecte.</p></div>";
     }
