@@ -21,6 +21,7 @@ function logOut()
 
 function verifUser()
 {
+    console.log(app.currentUser)
     if (app.currentUser != null)
     {
         connect = true;
