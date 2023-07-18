@@ -39,7 +39,7 @@ function loadHeaderFooter()
     if(connect == true)
     {
         ajoutheader +=     "<div id=\"navigation\" class=\"w3-bar\">";
-        ajoutheader +=         "<a href=\"index.html\" class=\"w3-bar-item w3-button w3-mobile w3-hover-white\">Temps d'attente</a>";
+        ajoutheader +=         "<a href=\"index.html\" class=\"w3-bar-item w3-button w3-mobile w3-hover-white\">Éclairage</a>";
         ajoutheader +=         "<a href=\"config.html\" class=\"w3-bar-item w3-button w3-mobile w3-hover-white\">Configuration</a>";
         ajoutheader +=         "<a onclick=\"logOut()\" class=\"w3-bar-item w3-button w3-mobile w3-hover-white w3-right\">Déconnexion</a>";
         ajoutheader +=     "</div>";
@@ -48,7 +48,7 @@ function loadHeaderFooter()
 
     var ajoutfooter='';
     ajoutfooter +=  "<div id=\"footer\" class=\"w3-padding-small w3-center\">";
-    ajoutfooter +=      "<i><a class=\"w3-right w3-padding-small w3-margin-bottom\" href=\"https://www.linkedin.com/in/louis-marquet-72485a151\" style=\"text-decoration: none;\">Louis MARQUET 2021</a></i>";
+    ajoutfooter +=      "<i><a class=\"w3-right w3-padding-small w3-margin-bottom\" href=\"https://www.linkedin.com/in/louis-marquet-72485a151\" style=\"text-decoration: none;\">Louis MARQUET 2023</a></i>";
     ajoutfooter +=  "</div>";
 
     document.body.insertAdjacentHTML('afterbegin',ajoutheader);
