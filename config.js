@@ -106,8 +106,8 @@ async function save(clicked_i)
     filter._id = Data[clicked_i]._id;
 
     data.Name = document.getElementById(Data[clicked_i].Name+"_1").value;
-    data.Activation = parseFloat(document.getElementById(Data[clicked_i].Name+"_2").value);
-    data.Desactivation = parseFloat(document.getElementById(Data[clicked_i].Name+"_3").value);
+    data.Activation = document.getElementById(Data[clicked_i].Name+"_2").value;
+    data.Desactivation = document.getElementById(Data[clicked_i].Name+"_3").value;
 
     var configur = document.getElementById("config");
     var ajouthtml;
