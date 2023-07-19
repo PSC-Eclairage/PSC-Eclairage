@@ -74,11 +74,13 @@ async function getData()
             }
 
             ajouthtml += "<div class=\"w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\"";
+            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\"";
             if(doc.Mode == true) {ajouthtml += "disabled";}
-            if(doc.Etat == false){ajouthtml += ">Activer</button>";}
-            else{ajouthtml += ">Désactiver</button>";}
-            ajouthtml +=    "<button class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\">Manuel</button>"
+            if(doc.Etat == false){ajouthtml += " onclick=\"activer(this.id)\">Activer</button>";}
+            else{ajouthtml += " onclick=\"desactiver(this.id)\">Désactiver</button>";}
+            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\""
+            if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
+            else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
             ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
