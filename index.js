@@ -65,11 +65,11 @@ async function getData()
             if(doc.Etat == true)
             {
                 //ajouthtml +=     "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(0,255,0);\" onclick=\"connexion()\">Désactiver</button>"
-                ajouthtml += "<div style=\"background-color:rgb(0,255,0);\" class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
+                ajouthtml += "<div style=\"background-color:rgb(0,255,0);\" class=\"w3-margin w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             } else
             {
                 //ajouthtml +=    "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(255,0,0);\"  onclick=\"connexion()\">Activer</button>"
-                ajouthtml += "<div style=\"background-color:rgb(255,0,0);\" class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
+                ajouthtml += "<div style=\"background-color:rgb(255,0,0);\" class=\"w3-margin w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             }
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             ajouthtml += "</div>"
