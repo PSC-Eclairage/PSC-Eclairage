@@ -2,7 +2,7 @@ var Data;
 
 window.onload = function()
 {
-    //verifUser();
+    verifUser();
     loadHeaderFooter();
     getData();
 }
@@ -51,7 +51,7 @@ async function getData()
             var keys = Object.keys(doc);
             var values = Object.values(doc);
             var nbkeys = Object.keys(doc).length;
-            ajouthtml += "<div class=\"w3-container w3-center\">";
+            ajouthtml += "<div id=\""+ doc.Name +"\ class=\"w3-container w3-center\">";
             ajouthtml +=    "<h2>"+doc.Name+"</h2>";
             ajouthtml += "</div>"
             // ajouthtml += "<tr id=\""+ doc.Name +"\">";
