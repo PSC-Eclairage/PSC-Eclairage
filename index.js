@@ -65,12 +65,18 @@ async function getData()
             if(doc.Etat == true)
             {
                 //ajouthtml +=     "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(0,255,0);\" onclick=\"connexion()\">Désactiver</button>"
-                ajouthtml += "<div style=\"background-color:rgb(9,106,9);\" class=\"w3-container w3-margin w3-center\"><p>Automatique</p><p class=\"w3-small w3-right\"><i> </i></p></div>";
+                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(9,200,9);\" class=\"w3-container w3-margin w3-center\"><p>Automatique</p></div>";
             } else
             {
                 //ajouthtml +=    "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(255,0,0);\"  onclick=\"connexion()\">Activer</button>"
-                ajouthtml += "<div style=\"background-color:rgb(106,9,9);\" class=\"w3-container w3-margin w3-center\"><p>Manuel</p><p class=\"w3-small w3-right\"><i> </i></p></div>";
+                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(200,9,9);\" class=\"w3-container w3-margin w3-center\"><p>Manuel</p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             }
+
+            ajouthtml += "<div class=\"w3-bar\">"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:45%\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:45%\">Manuel</button>"
+            ajouthtml += "</div>"
+
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             ajouthtml += "</div>"
             // ajouthtml += "<tr id=\""+ doc.Name +"\">";
