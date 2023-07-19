@@ -60,7 +60,7 @@ async function getData()
                 ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\""
             }else
             {
-                ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\" disabled"
+                ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\" disabled "
             }
             if(doc.Etat == true)
             {
