@@ -73,13 +73,13 @@ async function getData()
                 ajouthtml += "Manuel</p></div>";
             }
 
-            //ajouthtml += "<div class=\"w3-bar w3-margin w3-center\">"
+            ajouthtml += "<div class=\"w3-margin w3-center\">"
             ajouthtml +=    "<button class=\"w3-block w3-left-align w3-button\" style=\"width:30%; background-color:rgb(230,230,230);\"";
             if(doc.Mode == true) {ajouthtml += "disabled";}
             if(doc.Etat == false){ajouthtml += ">Activer</button>";}
             else{ajouthtml += ">Désactiver</button>";}
             ajouthtml +=    "<button class=\"w3-block w3-right-align w3-button\" style=\"width:30%; background-color:rgb(230,230,230);\">Manuel</button>"
-            //ajouthtml += "</div>"
+            ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             ajouthtml += "</div>"
