@@ -74,8 +74,8 @@ async function getData()
             }
 
             ajouthtml += "<div class=\"w3-bar w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%\">Activer</button>"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%\">Manuel</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(211,211,211);\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(211,211,211);\">Manuel</button>"
             ajouthtml += "</div>"
 
             ajouthtml += "</div>"
