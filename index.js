@@ -21,7 +21,7 @@ async function getData()
      var data_html = document.getElementById("data");
 
      const mongodb = app.currentUser.mongoClient("mongodb-atlas");
-     const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
+     const Zones = mongodb.db("Eclairage_PSC").collection("Zones");
 
      await Zones.find({},{sort:{Name:1}}).then(data =>{
          Data = data;
