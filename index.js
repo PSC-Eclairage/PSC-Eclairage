@@ -58,24 +58,24 @@ async function getData()
             if(doc.Etat == true)
             {
                 //ajouthtml +=     "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(0,255,0);\" onclick=\"connexion()\">Désactiver</button>"
-                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(9,200,9);\" class=\"w3-container w3-margin w3-center\"><p>";
+                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(9,200,9);\" class=\"w3-container w3-margin-right w3-margin-left w3-center\"><p>";
             } else
             {
                 //ajouthtml +=    "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(255,0,0);\"  onclick=\"connexion()\">Activer</button>"
-                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(200,9,9);\" class=\"w3-container w3-margin w3-center\"><p>";
+                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(200,9,9);\" class=\"w3-container w3-margin-right w3-margin-left w3-center\"><p>";
             }
 
             if(doc.Mode == true)
             {
-                ajouthtml += "Automatique ("+doc.Activation+"->"+doc.Desactivation+")</p></div>";
+                ajouthtml += "Automatique ( "+doc.Activation+" -> "+doc.Desactivation+" )</p></div>";
             }else
             {
                 ajouthtml += "Manuel</p></div>";
             }
 
             ajouthtml += "<div class=\"w3-bar w3-container w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(230,230,230);\">Activer</button>"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(230,230,230);\">Manuel</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\">Manuel</button>"
             ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
