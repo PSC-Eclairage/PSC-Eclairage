@@ -62,7 +62,7 @@ async function getData()
             } else
             {
                 //ajouthtml +=    "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(255,0,0);\"  onclick=\"connexion()\">Activer</button>"
-                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(200,9,9);\" class=\"w3-container w3-margin w3-center\"><p>Manuel</p></div>";
+                ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(200,9,9);\" class=\"w3-container w3-margin w3-center\"><p>";
             }
 
             if(doc.Mode == true)
@@ -74,8 +74,8 @@ async function getData()
             }
 
             ajouthtml += "<div class=\"w3-bar w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:45%\">Activer</button>"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:45%\">Manuel</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%\">Manuel</button>"
             ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
