@@ -54,9 +54,14 @@ async function getData()
             ajouthtml +=    "<div id=\""+ doc.Name +"_1\" class=\"w3-container w3-center\">";
             ajouthtml +=        "<h2>"+doc.Name+"</h2>";
             ajouthtml +=    "</div>"
-
-            ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\""
-
+            
+            if(doc.Mode == true)
+            {
+                ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\""
+            }else
+            {
+                ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section disabled\""
+            }
             if(doc.Etat == true)
             {
                 ajouthtml +=     "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(0,255,0);\" onclick=\"connexion()\">Désactiver</button>"
