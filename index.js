@@ -26,7 +26,8 @@ async function getData()
      await Zones.find({},{sort:{Name:1}}).then(data =>{
          Data = data;
          console.log(data)
-         var ajouthtml = "<div id=\"eclairage\" class=\"w3-card w3-margin\">";
+         var ajouthtml = "";
+         //<div id=\"eclairage\" class=\"w3-card w3-margin\">
 
         // ajouthtml += "<div class=\"w3-container w3-center\">";
         // ajouthtml +=    "<h2>Temps d'attente</h2>";
@@ -51,9 +52,10 @@ async function getData()
             var keys = Object.keys(doc);
             var values = Object.values(doc);
             var nbkeys = Object.keys(doc).length;
-            ajouthtml += "<div id=\""+ doc.Name +"\ class=\"w3-container w3-center\">";
-            ajouthtml +=    "<h2>"+doc.Name+"</h2>";
-            ajouthtml += "</div>"
+            ajouthtml += "<div id=\""+ doc.Name +"\" class=\"w3-card w3-margin\">"
+            ajouthtml +=    "<div id=\""+ doc.Name +"_1\ class=\"w3-container w3-center\">";
+            ajouthtml +=        "<h2>"+doc.Name+"</h2>";
+            ajouthtml +=    "</div>"
             // ajouthtml += "<tr id=\""+ doc.Name +"\">";
             // ajouthtml +=    "<td>"+ doc.Name +"</td>"
             // ajouthtml +=    "<td class=\"w3-center\">"+ doc.Visitors +"</td>"
