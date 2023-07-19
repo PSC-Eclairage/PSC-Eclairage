@@ -74,7 +74,10 @@ async function getData()
             }
 
             ajouthtml += "<div class=\"w3-bar w3-container w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\"";
+            if(doc.Mode == true) {ajouthtml += "disabled"}
+            if(doc.Etat == true){">Activer</button>"}
+            else{">Désactiver</button>"}
             ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\">Manuel</button>"
             ajouthtml += "</div>"
 
