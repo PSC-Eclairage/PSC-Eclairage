@@ -51,7 +51,7 @@ async function getData()
             var values = Object.values(doc);
             var nbkeys = Object.keys(doc).length;
             ajouthtml += "<div id=\""+ doc.Name +"\" class=\"w3-card w3-margin\">"
-            ajouthtml +=    "<div id=\""+ doc.Name +"_1\ class=\"w3-container w3-center\">";
+            ajouthtml +=    "<div id=\""+ doc.Name +"_1\" class=\"w3-container w3-center\">";
             ajouthtml +=        "<h2>"+doc.Name+"</h2>";
             ajouthtml +=    "</div>"
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
