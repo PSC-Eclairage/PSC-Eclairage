@@ -54,6 +54,7 @@ async function getData()
             ajouthtml +=    "<div id=\""+ doc.Name +"_1\ class=\"w3-container w3-center\">";
             ajouthtml +=        "<h2>"+doc.Name+"</h2>";
             ajouthtml +=    "</div>"
+            ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             ajouthtml += "</div>"
             // ajouthtml += "<tr id=\""+ doc.Name +"\">";
             // ajouthtml +=    "<td>"+ doc.Name +"</td>"
@@ -77,7 +78,7 @@ async function getData()
         });
         // ajouthtml += "</table>";
         // ajouthtml += "</div>";
-        ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
+        
         ajouthtml += "</div>";
 
         if(document.getElementById("eclairage"))
