@@ -74,10 +74,11 @@ async function getData()
             }
 
             ajouthtml += "<div class=\"w3-bar w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(211,211,211);\">Activer</button>"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50%; background-color:rgb(211,211,211);\">Manuel</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(211,211,211);\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(211,211,211);\">Manuel</button>"
             ajouthtml += "</div>"
 
+            ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             ajouthtml += "</div>"
             // ajouthtml += "<tr id=\""+ doc.Name +"\">";
             // ajouthtml +=    "<td>"+ doc.Name +"</td>"
