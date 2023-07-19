@@ -67,15 +67,15 @@ async function getData()
 
             if(doc.Mode == true)
             {
-                ajouthtml += "Automatique</p></div>"
+                ajouthtml += "Automatique ("+doc.Activation+"->"+doc.Desactivation+")</p></div>";
             }else
             {
-                ajouthtml += "Manuel</p></div>"
+                ajouthtml += "Manuel</p></div>";
             }
 
-            ajouthtml += "<div class=\"w3-bar w3-margin w3-center\">"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(211,211,211);\">Activer</button>"
-            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(211,211,211);\">Manuel</button>"
+            ajouthtml += "<div class=\"w3-bar w3-container w3-margin w3-center\">"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(230,230,230);\">Activer</button>"
+            ajouthtml +=    "<button class=\"w3-bar-item w3-button\" style=\"width:50% background-color:rgb(230,230,230);\">Manuel</button>"
             ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
