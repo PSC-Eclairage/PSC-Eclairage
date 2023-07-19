@@ -121,6 +121,56 @@ async function getData()
     })
 }
 
+async function activer(clicked_i)
+{
+    const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
+
+    var doc = Data[clicked_i];
+
+    var data = new Object;
+    var filter = new Object;
+    filter._id = Data[clicked_i]._id;
+
+    data.Etat = true;
+
+    await Attractions.updateOne(filter,{$set:data}).then(result =>{
+        ajouthtml = "<div id=\"info\" class=\"w3-panel w3-margin w3-display-container\" style=\"color:rgb(255,255,255);background-color:rgb(145,170,11)\"><span onclick=\"removeinfo()\" class=\"w3-button w3-large w3-display-topright\">&times;</span><h3>Réussi</h3><p>L'enregistremment des données a été exécuté.</p></div>";
+    }).catch(err =>{
+        ajouthtml = "<div id=\"info\" class=\"w3-panel w3-red w3-margin w3-display-container\"><span onclick=\"removeinfo()\" class=\"w3-button w3-large w3-display-topright\">&times;</span><h3>Erreur </h3><p>Mise à jour de la base de données impossible.</p></div>";
+    })
+}
+
+async function desactiver(clicked_i)
+{
+    const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
+
+    var doc = Data[clicked_i];
+
+    var data = new Object;
+    var filter = new Object;
+    filter._id = Data[clicked_i]._id;
+
+    data.Etat = false;
+
+    await Attractions.updateOne(filter,{$set:data}).then(result =>{
+        ajouthtml = "<div id=\"info\" class=\"w3-panel w3-margin w3-display-container\" style=\"color:rgb(255,255,255);background-color:rgb(145,170,11)\"><span onclick=\"removeinfo()\" class=\"w3-button w3-large w3-display-topright\">&times;</span><h3>Réussi</h3><p>L'enregistremment des données a été exécuté.</p></div>";
+    }).catch(err =>{
+        ajouthtml = "<div id=\"info\" class=\"w3-panel w3-red w3-margin w3-display-container\"><span onclick=\"removeinfo()\" class=\"w3-button w3-large w3-display-topright\">&times;</span><h3>Erreur </h3><p>Mise à jour de la base de données impossible.</p></div>";
+    })
+}
+
+async function manu(clicked_i)
+{
+
+}
+
+async function auto(clicked_i)
+{
+
+}
+
 // function zoom(i)
 // {
 //     var data_html = document.getElementById("data");
