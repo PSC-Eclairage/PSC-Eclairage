@@ -57,17 +57,18 @@ async function getData()
             
             if(doc.Mode == true)
             {
-                ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\""
+                //ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\""
             }else
             {
-                ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\" disabled "
+                //ajouthtml += "<button id=\""+ doc.Name +"_btn\" class=\"w3-button w3-border w3-xlarge w3-ripple w3-section\" disabled "
             }
             if(doc.Etat == true)
             {
-                ajouthtml +=     "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(0,255,0);\" onclick=\"connexion()\">Désactiver</button>"
+                //ajouthtml +=     "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(0,255,0);\" onclick=\"connexion()\">Désactiver</button>"
+                ajouthtml += "<div style=\"background-color:rgb(255,0,0);\" class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             } else
             {
-                ajouthtml +=    "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(255,0,0);\"  onclick=\"connexion()\">Activer</button>"
+                //ajouthtml +=    "style=\"width: 100%;color:rgb(255,255,255);background-color:rgb(255,0,0);\"  onclick=\"connexion()\">Activer</button>"
             }
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
             ajouthtml += "</div>"
