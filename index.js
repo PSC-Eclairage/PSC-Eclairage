@@ -25,7 +25,6 @@ async function getData()
 
      await Zones.find({},{sort:{Name:1}}).then(data =>{
          Data = data;
-         console.log(data)
          var ajouthtml = "";
          //<div id=\"eclairage\" class=\"w3-card w3-margin\">
 
