@@ -209,17 +209,17 @@ async function auto(clicked_i)
 
     if(act_h < des_h || (act_h == des_h && act_m < des_m))
     {
-        if(heure > act_h || (heure == act_h && minute > act_m)){data.Etat = true;}
+        if(heure > act_h || (heure == act_h && minute >= act_m)){data.Etat = true;}
         else {data.Etat = false;}
 
-        if(heure > des_h || (heure == des_h && minute > des_m)){data.Etat = false;}
+        if(heure > des_h || (heure == des_h && minute >= des_m)){data.Etat = false;}
     }
     else
     {
-        if(heure > des_h || (heure == des_h && minute > des_m)){data.Etat = false;}
+        if(heure > des_h || (heure == des_h && minute >= des_m)){data.Etat = false;}
         else {data.Etat = true;}
 
-        if(heure > act_h || (heure == act_h && minute > act_m)){data.Etat = true;}
+        if(heure > act_h || (heure == act_h && minute >= act_m)){data.Etat = true;}
     }
 
     data.Mode = true;
