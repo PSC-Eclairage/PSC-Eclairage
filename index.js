@@ -194,18 +194,22 @@ async function auto(clicked_i)
 
     var now = new Date();
     var heure = now.getHours();
-    console.log(heure);
+    
     var minute = now.getMinutes();
-    console.log(minute);
+    
 
     const act = Data[clicked_i].Activation;
     const des = Data[clicked_i].Desactivation;
 
     var act_h = parseInt(act.substr(0,1));
+    console.log(act_h);
     var act_m = parseInt(act.substr(3,4));
+    console.log(act_m);
 
     var des_h = parseInt(des.substr(0,1));
+    console.log(des_h);
     var des_m = parseInt(des.substr(3,4));
+    console.log(des_m);
 
     if(act_h < des_h || (act_h == des_h && act_m < des_m))
     {
