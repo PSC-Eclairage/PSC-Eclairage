@@ -202,14 +202,10 @@ async function auto(clicked_i)
     const des = Data[clicked_i].Desactivation;
 
     var act_h = parseInt(act.substr(0,2));
-    console.log(act_h);
     var act_m = parseInt(act.substr(3,2));
-    console.log(act_m);
 
     var des_h = parseInt(des.substr(0,2));
-    console.log(des_h);
     var des_m = parseInt(des.substr(3,2));
-    console.log(des_m);
 
     if(act_h < des_h || (act_h == des_h && act_m < des_m))
     {
