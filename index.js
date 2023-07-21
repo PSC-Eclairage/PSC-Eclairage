@@ -196,7 +196,7 @@ async function auto(clicked_i)
     var heure = now.getHours();
     console.log(heure);
     var minute = now.getMinutes();
-    console.log(minutes);
+    console.log(minute);
 
     const act = Data[clicked_i].Activation;
     const des = Data[clicked_i].Desactivation;
