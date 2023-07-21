@@ -192,6 +192,7 @@ async function auto(clicked_i)
     var filter = new Object;
     filter._id = Data[clicked_i]._id;
 
+    var now = new Date();
     var heure = now.getHours();
     console.log(heure);
     var minute = now.getMinutes();
