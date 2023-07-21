@@ -192,6 +192,35 @@ async function auto(clicked_i)
     var filter = new Object;
     filter._id = Data[clicked_i]._id;
 
+    var heure = now.getHours();
+    console.log(heure);
+    var minute = now.getMinutes();
+    console.log(minutes);
+
+    const act = Data[clicked_i].Activation;
+    const des = Data[clicked_i].Desactivation;
+
+    var act_h = parseInt(act.substr(0,1));
+    var act_m = parseInt(act.substr(3,4));
+
+    var des_h = parseInt(des.substr(0,1));
+    var des_m = parseInt(des.substr(3,4));
+
+    if(act_h < des_h || (act_h == des_h && act_m < des_m))
+    {
+        if(heure > act_h || (heure == act_h && minute > act_m)){data.Etat = true;}
+        else {data.Etat = false;}
+
+        if(heure > des_h || (heure == des_h && minute > des_m)){data.Etat = false;}
+    }
+    else
+    {
+        if(heure > des_h || (heure == des_h && minute > des_m)){data.Etat = false;}
+        else {data.Etat = true;}
+
+        if(heure > act_h || (heure == act_h && minute > act_m)){data.Etat = true;}
+    }
+
     data.Mode = true;
 
     await Attractions.updateOne(filter,{$set:data}).then(result =>{
