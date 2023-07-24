@@ -236,7 +236,7 @@ async function actM30m(clicked_i)
     data.M30m = true;
 
     var now = new Date();
-    now = now.setMinutes(now.getMinutes()+30);
+    now.setMinutes(now.getMinutes()+30);
     var heure = now.getHours();
     var heureString = ("0"+heure).slice(-2);
     var minute = now.getMinutes();
