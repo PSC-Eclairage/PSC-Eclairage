@@ -92,7 +92,7 @@ async function getData()
 
             ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:33%; background-color:rgb(230,230,230);\"";
             if(doc.M30m == true){ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' OFF</button>";}
-            else{ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' ON</button>";}
+            else{ajouthtml += " onclick=\"actM30m(this.id)\">Mode 30\' ON</button>";}
             // if(doc.M30m == false)
             // {
             //     if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
@@ -214,6 +214,26 @@ async function desM30m(clicked_i)
     filter._id = Data[clicked_i]._id;
 
     data.M30m = false;
+
+    await Attractions.updateOne(filter,{$set:data}).then(result =>{
+        getData();
+    }).catch(err =>{
+        ajouthtml = console.log(err);
+    })
+}
+
+async function actM30m(clicked_i)
+{
+    const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
+
+    var doc = Data[clicked_i];
+
+    var data = new Object;
+    var filter = new Object;
+    filter._id = Data[clicked_i]._id;
+
+    data.M30m = true;
 
     await Attractions.updateOne(filter,{$set:data}).then(result =>{
         getData();
