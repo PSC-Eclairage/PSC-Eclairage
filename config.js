@@ -143,7 +143,8 @@ async function ajout()
         "Activation": document.getElementById("new_Name_2").value,
         "Desactivation": document.getElementById("new_Name_3").value,
         "Mode": false,
-        "Etat": false
+        "Etat": false,
+        "M30m": false
     };
 
     var configur = document.getElementById("data");
