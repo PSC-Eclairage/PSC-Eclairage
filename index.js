@@ -237,8 +237,10 @@ async function actM30m(clicked_i)
 
     var now = new Date();
     now = now.setMinutes(now.getMinutes()+30);
-    var heure = ("0"+now.getHours().toString()).slice(-2);
-    var minute = ("0"+now.getMinutes().toString()).slice(-2);
+    var heure = now.getHours();
+    var heureString = ("0"+heure).slice(-2);
+    var minute = now.getMinutes();
+    var minuteString = ("0"+minute).slice(-2);
     data.HfinM30m = heure+":"+minute;
 
     await Attractions.updateOne(filter,{$set:data}).then(result =>{
