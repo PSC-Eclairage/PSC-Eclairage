@@ -91,8 +91,8 @@ async function getData()
             else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
 
             ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:33%; background-color:rgb(230,230,230);\"";
-            if(doc.M30m == true){ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' OFF</button>";}
-            else{ajouthtml += " onclick=\"actM30m(this.id)\">Mode 30\' ON</button>";}
+            if(doc.M30m == true){ajouthtml += " onclick=\"desM30m(this.id)\">30\' OFF</button>";}
+            else{ajouthtml += " onclick=\"actM30m(this.id)\">30\' ON</button>";}
             // if(doc.M30m == false)
             // {
             //     if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
@@ -234,6 +234,11 @@ async function actM30m(clicked_i)
     filter._id = Data[clicked_i]._id;
 
     data.M30m = true;
+
+    var now = new Date();
+    var heure = now.getHours();
+    var minute = now.getMinutes();
+    data.HfinM30m = heure+":"+minute;
 
     await Attractions.updateOne(filter,{$set:data}).then(result =>{
         getData();
