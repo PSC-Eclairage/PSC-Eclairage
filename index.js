@@ -80,22 +80,28 @@ async function getData()
                 ajouthtml += "Mode 30 minutes ( "+doc.HfinM30m +" )</p></div>";
             }
 
-            ajouthtml += "<div class=\"w3-margin w3-center\">"
-            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\"";
+            ajouthtml += "<div class=\"w3-margin w3-center\">";
+            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:33%; background-color:rgb(230,230,230);\"";
             if(doc.Mode == true) {ajouthtml += "disabled";}
             if(doc.Etat == false){ajouthtml += " onclick=\"activer(this.id)\">Activer</button>";}
             else{ajouthtml += " onclick=\"desactiver(this.id)\">Désactiver</button>";}
-            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\""
+            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:33%; background-color:rgb(230,230,230);\"";
 
-            if(doc.M30m == false)
-            {
-                if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
-                else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
-            }
-            else
-            {
-                ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' OFF</button>";
-            }
+            if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
+            else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
+
+            ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:33%; background-color:rgb(230,230,230);\"";
+            if(doc.M30m == true){ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' OFF</button>";}
+            else{ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' ON</button>";}
+            // if(doc.M30m == false)
+            // {
+            //     if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
+            //     else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
+            // }
+            // else
+            // {
+            //     ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' OFF</button>";
+            // }
             ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
