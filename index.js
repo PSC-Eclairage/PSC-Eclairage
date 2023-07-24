@@ -65,12 +65,19 @@ async function getData()
                 ajouthtml += "<div style=\"color:rgb(255,255,255);background-color:rgb(200,9,9);\" class=\"w3-container w3-margin-right w3-margin-left w3-center\"><p>";
             }
 
-            if(doc.Mode == true)
+            if(doc.M30m == false)
             {
-                ajouthtml += "Automatique ( "+doc.Activation+" -> "+doc.Desactivation+" )</p></div>";
-            }else
+                if(doc.Mode == true)
+                {
+                    ajouthtml += "Automatique ( "+doc.Activation+" -> "+doc.Desactivation+" )</p></div>";
+                }else
+                {
+                    ajouthtml += "Manuel</p></div>";
+                }
+            }
+            else
             {
-                ajouthtml += "Manuel</p></div>";
+                ajouthtml += "Mode 30 minutes ( "+doc.HfinM30m +" )</p></div>";
             }
 
             ajouthtml += "<div class=\"w3-margin w3-center\">"
@@ -79,8 +86,16 @@ async function getData()
             if(doc.Etat == false){ajouthtml += " onclick=\"activer(this.id)\">Activer</button>";}
             else{ajouthtml += " onclick=\"desactiver(this.id)\">Désactiver</button>";}
             ajouthtml +=    "<button id=\""+ i +"\" class=\"w3-button\" style=\"width:50%; background-color:rgb(230,230,230);\""
-            if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
-            else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
+
+            if(doc.M30m == false)
+            {
+                if(doc.Mode == true){ajouthtml += " onclick=\"manu(this.id)\">Manuel</button>";}
+                else{ajouthtml += " onclick=\"auto(this.id)\">Automatique</button>";}
+            }
+            else
+            {
+                ajouthtml += " onclick=\"desM30m(this.id)\">Mode 30\' OFF</button>";
+            }
             ajouthtml += "</div>"
 
             ajouthtml += "<div class=\"w3-container w3-center\"><p></p><p class=\"w3-small w3-right\"><i> </i></p></div>";
@@ -173,6 +188,26 @@ async function manu(clicked_i)
     filter._id = Data[clicked_i]._id;
 
     data.Mode = false;
+
+    await Attractions.updateOne(filter,{$set:data}).then(result =>{
+        getData();
+    }).catch(err =>{
+        ajouthtml = console.log(err);
+    })
+}
+
+async function desM30m(clicked_i)
+{
+    const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+    const Attractions = mongodb.db("Eclairage_PSC").collection("Zones");
+
+    var doc = Data[clicked_i];
+
+    var data = new Object;
+    var filter = new Object;
+    filter._id = Data[clicked_i]._id;
+
+    data.M30m = false;
 
     await Attractions.updateOne(filter,{$set:data}).then(result =>{
         getData();
